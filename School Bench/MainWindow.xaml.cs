@@ -20,20 +20,30 @@ namespace School_Bench
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(int number)
         {
             InitializeComponent();
-            WelcomeFrame.Content = new LoginPage();
+            if(number == 1)
+            {
+                WelcomeFrame.Content = new RegisterPage();
+                PageName.Text = "Sign Up";
+            }
+            else
+            {
+                WelcomeFrame.Content = new LoginPage();
+                PageName.Text = "Login";
+            }
+            
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-
+            this.WindowState = WindowState.Minimized;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

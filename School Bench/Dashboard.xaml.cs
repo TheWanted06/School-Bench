@@ -10,29 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace School_Bench
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class Dashboard : Window
     {
-        public LoginPage()
+        public Dashboard()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void BtnAddModule_Click(object sender, RoutedEventArgs e)
         {
-            //check credentials
+
         }
 
-        private void SignUpbt_Click(object sender, RoutedEventArgs e)
+        private void BtnRemoveModule_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(1);
+
         }
     }
 }

@@ -24,5 +24,20 @@ namespace School_Bench
         {
             InitializeComponent();
         }
+
+        private void Loginbtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow(0);
+        }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            //credential checking
+
+            //saving creadentials
+
+            //Loading additional page
+            MainWindow mainWindow = new MainWindow(2);
+        }
     }
 }

@@ -16,23 +16,19 @@ using System.Windows.Shapes;
 namespace School_Bench
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for ResgisterAdditional.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class ResgisterAdditional : Page
     {
-        public LoginPage()
+        public ResgisterAdditional()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void btnFinish_Click(object sender, RoutedEventArgs e)
         {
-            //check credentials
-        }
-
-        private void SignUpbt_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow(1);
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
         }
     }
 }
