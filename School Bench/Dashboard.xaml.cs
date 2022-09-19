@@ -33,5 +33,30 @@ namespace School_Bench
         {
 
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnRemoveModule2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAddStudyTime_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnRemoveStudyTime_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
