@@ -16,27 +16,23 @@ using System.Windows.Shapes;
 namespace School_Bench
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddingStudyTime.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddingStudyTime : Page
     {
-        public MainWindow()
+        public AddingStudyTime()
         {
             InitializeComponent();
-            WelcomeFrame.Content = new LoginPage();
-            PageName.Text = "Login";
-        }
-        
-
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        private void btnAddStudyTime_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            Environment.Exit(0);
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

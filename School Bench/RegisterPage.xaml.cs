@@ -27,7 +27,10 @@ namespace School_Bench
 
         private void Loginbtn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(0);
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.PageName.Text = "Login";
+            mainWindow.WelcomeFrame.Content = new LoginPage();
+            mainWindow.Show();
         }
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
@@ -37,7 +40,11 @@ namespace School_Bench
             //saving creadentials
 
             //Loading additional page
-            MainWindow mainWindow = new MainWindow(2);
+            this.Content = null;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.PageName.Text = "Additional";
+            mainWindow.WelcomeFrame.Content = new ResgisterAdditional();
+            mainWindow.Show();
         }
     }
 }

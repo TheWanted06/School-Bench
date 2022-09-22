@@ -32,7 +32,11 @@ namespace School_Bench
 
         private void SignUpbt_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(1);
+            this.Content = null;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.PageName.Text = "Register";
+            mainWindow.WelcomeFrame.Content = new RegisterPage();
+            mainWindow.Show();
         }
     }
 }

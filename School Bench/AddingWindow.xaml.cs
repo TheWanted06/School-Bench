@@ -19,9 +19,27 @@ namespace School_Bench
     /// </summary>
     public partial class AddingWindow : Window
     {
-        public AddingWindow()
+        public AddingWindow( int i)
         {
             InitializeComponent();
+            if (i == 0)
+            {
+                AddingFrame.Content = new AddModules();
+            }
+            else
+            {
+                AddingFrame.Content = new AddingStudyTime();
+            }
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
