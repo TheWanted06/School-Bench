@@ -27,6 +27,7 @@ namespace School_Bench
 
         private void Loginbtn_Click(object sender, RoutedEventArgs e)
         {
+            this.Content = null;
             MainWindow mainWindow = new MainWindow();
             mainWindow.PageName.Text = "Login";
             mainWindow.WelcomeFrame.Content = new LoginPage();
