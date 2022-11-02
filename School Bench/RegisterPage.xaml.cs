@@ -40,7 +40,6 @@ namespace School_Bench
 
             //saving creadentials
 
-            //Loading additional page
             this.Content = null;
             MainWindow mainWindow = new MainWindow();
             mainWindow.PageName.Text = "Additional";
