@@ -1,5 +1,7 @@
-﻿using System;
+﻿using School_Bench.Classes;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,10 @@ namespace School_Bench
     /// </summary>
     public partial class RegisterPage : Page
     {
+        SqlConnection cn;
+        SqlCommand cmd;
+        SqlDataReader dr;
+        SqlDataAdapter da;
         public RegisterPage()
         {
             InitializeComponent();
@@ -36,15 +42,62 @@ namespace School_Bench
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            //credential checking
+            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\lab_services_student\source\repos\School Bench\School Bench\Database1.mdf"";Integrated Security=True");
+            cn.Open();
 
-            //saving creadentials
+            string Fname = txtFirstName.Text;
+            string Lname = txtLastName.Text;
+            string Email = txtEmail.Text;
+            string Password1 = txtPass.Password.ToString();
+            string Password2 = txtConPass.Password.ToString();
 
-            this.Content = null;
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.PageName.Text = "Additional";
-            mainWindow.WelcomeFrame.Content = new ResgisterAdditional();
-            mainWindow.Show();
+            if(Password1 != Password2)
+            {
+                txtError.Text = "Password not Matching";
+            }
+            else
+            {
+                txtError.Text = "";
+                //chech if email is already in use
+                if (FindEmail(Email))
+                {
+                    //hashing password 
+                    var HashedPW = Encrypt.HashPassword(Password1);
+
+                    User user = new User();
+                    user.FirstName = Fname;
+                    user.Lastname = Lname;
+                    user.Email = Email;
+                    user.Password = HashedPW;
+
+
+                    this.Content = null;
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.PageName.Text = "Additional";
+                    mainWindow.WelcomeFrame.Content = new ResgisterAdditional(user);
+                    mainWindow.Show();
+
+                }
+                
+            }
+            cn.Close();
+        }
+        public bool FindEmail(string email)
+        {
+            string QUERY = $"SELECT UserId FROM USERS WHERE Email ={email}";
+            cmd = new SqlCommand(QUERY, cn);
+
+            da = new SqlDataAdapter(cmd);
+            
+            int UserExist = cmd.ExecuteNonQuery();
+            if (UserExist>0) 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

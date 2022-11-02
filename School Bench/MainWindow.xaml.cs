@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,6 +38,14 @@ namespace School_Bench
         {
             this.Close();
             Environment.Exit(0);
+        }
+
+        public string HashPassword(string password)
+        {
+            SHA256 Hash = SHA256.Create();
+            var passwordBytes = Encoding.UTF8.GetBytes(password);
+            var hashedPassword = Hash.ComputeHash(passwordBytes);
+            return Convert.ToHexString(hashedPassword);
         }
     }
 }

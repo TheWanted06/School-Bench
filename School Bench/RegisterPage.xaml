@@ -56,7 +56,7 @@
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
                                Margin="0,15,0,0"/>
-        <TextBox x:Name="txtLastNamer"
+        <TextBox x:Name="txtLastName"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                            
@@ -144,6 +144,12 @@
                                         AlignmentX="Left"/>
             </PasswordBox.Background>
         </PasswordBox>
+        <TextBlock Text=""
+                   x:Name="txtError"
+                   Foreground="Red"
+                   FontSize="12"
+                   FontWeight="Medium"
+                   HorizontalAlignment="Center"/>
 
         <Button x:Name="btnSignUp"                          
                             BorderThickness="0"
